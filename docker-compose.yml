@@ -1,0 +1,14 @@
+services:
+  websocketurl:
+    container_name: websocketurl
+    build: .
+    restart: always
+    volumes:
+      - .:/app
+      - /var/log/supervisor:/var/log/supervisor
+    networks:
+      - websocket-network
+
+networks:
+  websocket-network:
+    driver: bridge
